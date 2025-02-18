@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFUI", "WPFUI\WPFUI.csproj", "{73178CDA-768A-4356-B87F-500DD726F2F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Engine\Engine.csproj", "{65C02B1A-597A-454E-979F-CD1C83DD6D5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73178CDA-768A-4356-B87F-500DD726F2F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73178CDA-768A-4356-B87F-500DD726F2F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73178CDA-768A-4356-B87F-500DD726F2F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73178CDA-768A-4356-B87F-500DD726F2F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65C02B1A-597A-454E-979F-CD1C83DD6D5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65C02B1A-597A-454E-979F-CD1C83DD6D5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65C02B1A-597A-454E-979F-CD1C83DD6D5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65C02B1A-597A-454E-979F-CD1C83DD6D5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
