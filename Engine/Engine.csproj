@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Remove="images\locations\csharptestgamehouse.png" />
+      <Resource Include="images\locations\Home.png" />
+    </ItemGroup>
+
 </Project>
