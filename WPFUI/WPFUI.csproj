@@ -12,4 +12,10 @@
       <ProjectReference Include="..\Engine\Engine.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Resource Include="images\locations\Home.png" />
+      <None Remove="images\locations\SpiderForest.png" />
+      <Resource Include="images\locations\SpiderForest.png" />
+    </ItemGroup>
+
 </Project>
