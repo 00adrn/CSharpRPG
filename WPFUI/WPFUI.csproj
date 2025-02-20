@@ -14,11 +14,10 @@
 
     <ItemGroup>
       <Resource Include="images\locations\csharptestgamehome.png" />
+      <Resource Include="images\locations\csharptestgamespiderforest.png" />
       <Resource Include="images\locations\Home.png" />
       <None Remove="images\locations\SpiderForest.png" />
-      <Resource Include="images\locations\csharptestgamespiderforest.png" />
       <None Remove="images\locations\csharptestgamespiderforest.png" />
-      <Resource Include="images\locations\csharptestgamespiderforest.png" />
     </ItemGroup>
 
 </Project>

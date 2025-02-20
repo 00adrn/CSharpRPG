@@ -7,7 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7b7ca90-1823-45c2-a340-1cc6b9ac8f20" name="Changes" comment="added ability to traverse across diferent lcoations. currently only 2 locations exist because i am too tired to create the other locations and their sprites." />
+    <list default="true" id="f7b7ca90-1823-45c2-a340-1cc6b9ac8f20" name="Changes" comment="added ability to traverse across diferent lcoations. currently only 2 locations exist because i am too tired to create the other locations and their sprites.">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SOSCSRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SOSCSRPG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/factories/WorldFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/factories/WorldFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WPFUI/WPFUI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WPFUI/WPFUI.csproj" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,12 +29,12 @@
     &quot;assignee&quot;: &quot;00adrn&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/00adrn/CSharpRpgTestGame.git&quot;,
-    &quot;accountId&quot;: &quot;f1c05dd2-a251-4053-943c-fa6ea2a164c9&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/00adrn/CSharpRpgTestGame.git",
+    "accountId": "15a47a49-eaf4-4640-aa74-a399407dbec9"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/Users/ADRIAN/RiderProjects/SOSCSRPG/Engine/factories/WorldFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/ADRIAN/RiderProjects/SOSCSRPG/Engine/factories/WorldFactory.cs" root0="SKIP_HIGHLIGHTING" />
@@ -90,6 +94,7 @@
       <workItem from="1739940952634" duration="6703000" />
       <workItem from="1740010777336" duration="1200000" />
       <workItem from="1740025374126" duration="9273000" />
+      <workItem from="1740088159309" duration="2312000" />
     </task>
     <task id="LOCAL-00001" summary="created location class. Idk why images won't load onto the screen. needs fixing">
       <option name="closed" value="true" />
