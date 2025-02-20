@@ -9,6 +9,10 @@
     <ItemGroup>
       <None Remove="images\locations\csharptestgamehouse.png" />
       <Resource Include="images\locations\Home.png" />
+      <None Remove="images\locations\csharptestgamehome.png" />
+      <None Remove="images\locations\homeUpscale.png" />
+      <Resource Include="images\locations\homeUpscale.png" />
+      <None Remove="images\locations\homePng64.png" />
     </ItemGroup>
 
 </Project>

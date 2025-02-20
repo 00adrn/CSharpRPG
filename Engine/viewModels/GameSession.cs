@@ -56,7 +56,7 @@ public class GameSession:INotifyPropertyChanged
     public GameSession()
     {
         currentPlayer = new Player();
-        currentPlayer.name = "Arthur";
+        currentPlayer.name = "Altria";
         currentPlayer.characterClass = "Saber";
         currentPlayer.hitPoints = 100;
         currentPlayer.experiencePoints = 0;
