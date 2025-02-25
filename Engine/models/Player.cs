@@ -1,14 +1,16 @@
 ﻿using System.ComponentModel;
+using System.Runtime.InteropServices;
+
 namespace Engine.models;
 
-public class Player : INotifyPropertyChanged
+public class Player: BaseNotification
 {
     private string _name;
     private string _characterClass;
     private int _hitpoints;
     private int _experiencePoints;
     private int _level;
-    public int _gold;
+    private int _gold;
 
 
     public string name
@@ -17,7 +19,7 @@ public class Player : INotifyPropertyChanged
         set
         {
             _name = value;
-            OnPropertyChanged("name");
+            OnPropertyChanged(nameof(name));
         }
     }
 
@@ -27,7 +29,7 @@ public class Player : INotifyPropertyChanged
         set
         {
             _characterClass = value;
-            OnPropertyChanged("characterClass");
+            OnPropertyChanged(nameof(characterClass));
         }
     }
 
@@ -37,7 +39,7 @@ public class Player : INotifyPropertyChanged
         set
         {
             _hitpoints = value;
-            OnPropertyChanged("hitPoints");
+            OnPropertyChanged(nameof(hitPoints));
         }
     }
     public int experiencePoints
@@ -46,7 +48,7 @@ public class Player : INotifyPropertyChanged
         set
         {
             _experiencePoints = value;
-            OnPropertyChanged("experiencePoints");
+            OnPropertyChanged(nameof(experiencePoints));
         }
     }
     public int level
@@ -55,7 +57,7 @@ public class Player : INotifyPropertyChanged
         set
         {
             _level = value;
-            OnPropertyChanged("level");
+            OnPropertyChanged(nameof(level));
         }
     }
 
@@ -65,12 +67,8 @@ public class Player : INotifyPropertyChanged
         set
         {
             _gold = value;
-            OnPropertyChanged("gold");
+            OnPropertyChanged(nameof(gold));
         }
     }
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected virtual void OnPropertyChanged(string propertyName)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
+
 }

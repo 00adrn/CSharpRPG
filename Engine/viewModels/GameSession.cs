@@ -4,7 +4,7 @@ namespace Engine.viewModels;
 using Engine.models;
 using Engine.factories;
 
-public class GameSession:INotifyPropertyChanged
+public class GameSession : BaseNotification
 {
     private Location _currentLocation;
     public Player currentPlayer { get; set; }
@@ -16,11 +16,11 @@ public class GameSession:INotifyPropertyChanged
         set
         {
             _currentLocation = value;
-            OnPropertyChanged("currentLocation");
-            OnPropertyChanged("hasLocationNorth");
-            OnPropertyChanged("hasLocationWest");
-            OnPropertyChanged("hasLocationEast");
-            OnPropertyChanged("hasLocationSouth");
+            OnPropertyChanged(nameof(currentLocation));
+            OnPropertyChanged(nameof(hasLocationNorth));
+            OnPropertyChanged(nameof(hasLocationWest));
+            OnPropertyChanged(nameof(hasLocationEast));
+            OnPropertyChanged(nameof(hasLocationSouth));
         }
     }
 
@@ -55,23 +55,10 @@ public class GameSession:INotifyPropertyChanged
 
     public GameSession()
     {
-        currentPlayer = new Player();
-        currentPlayer.name = "Altria";
-        currentPlayer.characterClass = "Saber";
-        currentPlayer.hitPoints = 100;
-        currentPlayer.experiencePoints = 0;
-        currentPlayer.level = 1;
-        currentPlayer.gold = 100000;
-        
+        currentPlayer = new Player {name="Altria", characterClass = "Saber", hitPoints = 100, experiencePoints = 0, gold = 10};
         WorldFactory factory = new WorldFactory();
         currentWorld = factory.CreateWorld();
-
         currentLocation = currentWorld.LocationAt(0, -1);
-    }
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected virtual void OnPropertyChanged(string propertyName)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
     public void MoveDirection(string direction)
     {
