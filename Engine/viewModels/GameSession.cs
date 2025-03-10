@@ -56,8 +56,9 @@ public class GameSession : BaseNotification
     public GameSession()
     {
         currentPlayer = new Player {name="Altria", characterClass = "Saber", hitPoints = 100, experiencePoints = 0, gold = 10};
-        WorldFactory factory = new WorldFactory();
-        currentWorld = factory.CreateWorld();
+        
+        currentWorld = WorldFactory.CreateWorld();
+        
         currentLocation = currentWorld.LocationAt(0, -1);
     }
     public void MoveDirection(string direction)
@@ -65,16 +66,33 @@ public class GameSession : BaseNotification
         switch (direction)
         {
             case "north":
-                currentLocation = currentWorld.LocationAt(currentLocation.xCoordinate, currentLocation.yCoordinate+1);
+                if (hasLocationNorth)
+                {
+                    currentLocation =
+                        currentWorld.LocationAt(currentLocation.xCoordinate, currentLocation.yCoordinate + 1);
+                }
                 break;
             case "east":
-                currentLocation = currentWorld.LocationAt(currentLocation.xCoordinate+1, currentLocation.yCoordinate);
+                if (hasLocationEast)
+                {
+                    currentLocation =
+                        currentWorld.LocationAt(currentLocation.xCoordinate + 1, currentLocation.yCoordinate);
+                }
                 break;
             case "south":
-                currentLocation = currentWorld.LocationAt(currentLocation.xCoordinate, currentLocation.yCoordinate-1);
+                if (hasLocationSouth)
+                {
+                    currentLocation =
+                        currentWorld.LocationAt(currentLocation.xCoordinate, currentLocation.yCoordinate - 1);
+                }
                 break;
             case "west":
-                currentLocation = currentWorld.LocationAt(currentLocation.xCoordinate-1, currentLocation.yCoordinate);
+                if (hasLocationWest)
+                {
+                    currentLocation =
+                        currentWorld.LocationAt(currentLocation.xCoordinate - 1, currentLocation.yCoordinate);
+                }
+
                 break;
         }
     }

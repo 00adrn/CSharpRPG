@@ -1,9 +1,9 @@
 ﻿using Engine.models;
 namespace Engine.factories;
 
-internal class WorldFactory
+internal static class WorldFactory
 {
-    internal World CreateWorld()
+    internal static World CreateWorld()
     {
         World newWorld = new World();
         newWorld.AddLocation(0, -1, "Home", "Home, sweet home!", "/WPFUI;component/images/locations/csharptestgamehome.png");
