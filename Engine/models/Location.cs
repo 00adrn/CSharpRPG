@@ -7,5 +7,5 @@ public class Location
     public string name { get; set; }
     public string description { get; set; }
     public string imageName { get; set; }
-    public List<Quest> QuestAvailableHere { get; set; } = new List<Quest>();
+    public List<Quest> QuestsAvailableHere { get; set; } = new List<Quest>();
 }

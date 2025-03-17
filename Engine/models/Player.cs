@@ -23,7 +23,6 @@ public class Player: BaseNotification
             OnPropertyChanged(nameof(name));
         }
     }
-
     public string characterClass
     {
         get { return _characterClass; }
@@ -33,7 +32,6 @@ public class Player: BaseNotification
             OnPropertyChanged(nameof(characterClass));
         }
     }
-
     public int hitPoints
     {
         get { return _hitpoints; }
@@ -73,13 +71,13 @@ public class Player: BaseNotification
     }
     
     public ObservableCollection<GameItem> inventory { get; set; }
-    public ObservableCollection<Quest> quests { get; set; }
+    public ObservableCollection<QuestStatus> quests { get; set; }
     
 
     public Player()
     {
         inventory = new ObservableCollection<GameItem>();
-        quests = new ObservableCollection<Quest>();
+        quests = new ObservableCollection<QuestStatus>();
     }
     
 }

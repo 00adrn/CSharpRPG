@@ -4,6 +4,23 @@ public class QuestStatus
 {
     public Quest playerQuest { get; set; }
     public bool completed { get; set; }
+    private string _status;
+    public string status
+    {
+        get
+        {
+            if (completed)
+            {
+                return "Completed";
+            }
+
+            return "In Progress";
+        }
+        set
+        {
+            _status = value;
+        }
+    }
 
     public QuestStatus(Quest quest)
     {
@@ -11,3 +28,4 @@ public class QuestStatus
         completed = false;
     }
 }
+

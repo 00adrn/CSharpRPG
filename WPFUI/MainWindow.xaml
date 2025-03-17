@@ -104,7 +104,21 @@
                         
                     </DataGrid>
                 </TabItem>
-                <TabItem Header="Quests"> </TabItem>
+                <TabItem Header="Quests">
+                    <DataGrid ItemsSource="{Binding currentPlayer.quests}"
+                              AutoGenerateColumns="False"
+                              HeadersVisibility="Column">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header = "Name"
+                                                Binding="{Binding playerQuest.questName}"
+                                                Width="*"/>
+                            <DataGridTextColumn Header="Status"
+                                                Binding="{Binding status}"
+                                                Width="Auto"/>
+                        </DataGrid.Columns>
+                        
+                    </DataGrid>
+                </TabItem>
             </TabControl>
         </Grid>
         

@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel;
-
+using System.Linq;
 namespace Engine.viewModels;
 using Engine.models;
 using Engine.factories;
@@ -21,6 +21,8 @@ public class GameSession : BaseNotification
             OnPropertyChanged(nameof(hasLocationWest));
             OnPropertyChanged(nameof(hasLocationEast));
             OnPropertyChanged(nameof(hasLocationSouth));
+
+            GivePlayerQuestsAtLocation();
         }
     }
 
@@ -94,6 +96,17 @@ public class GameSession : BaseNotification
                 }
 
                 break;
+        }
+    }
+
+    private void GivePlayerQuestsAtLocation()
+    {
+        foreach (Quest quest in currentLocation.QuestsAvailableHere)
+        {
+            if (!currentPlayer.quests.Any(q => q.playerQuest.questID == quest.questID))
+            {
+                currentPlayer.quests.Add(new QuestStatus(quest));
+            }
         }
     }
 }
