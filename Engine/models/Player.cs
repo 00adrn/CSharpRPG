@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Runtime.InteropServices;
 
 namespace Engine.models;
@@ -70,5 +71,15 @@ public class Player: BaseNotification
             OnPropertyChanged(nameof(gold));
         }
     }
+    
+    public ObservableCollection<GameItem> inventory { get; set; }
+    public ObservableCollection<Quest> quests { get; set; }
+    
 
+    public Player()
+    {
+        inventory = new ObservableCollection<GameItem>();
+        quests = new ObservableCollection<Quest>();
+    }
+    
 }

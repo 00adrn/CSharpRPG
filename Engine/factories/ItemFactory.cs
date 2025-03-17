@@ -11,6 +11,9 @@ public static class ItemFactory
         
         _standardGameItems.Add(new Weapon(1001, "Wooden Spoon", 1, 1, 2));
         _standardGameItems.Add(new Weapon(1002, "Wooden Sword", 5, 2 , 3));
+        _standardGameItems.Add(new GameItem(6001, "Wheat", 2));
+        _standardGameItems.Add(new GameItem(6002, "Wood", 3));
+        _standardGameItems.Add(new GameItem(6003, "Wolf Hide", 5));
     }
 
     public static GameItem CreateGameItem(int itemTypeID)
@@ -26,7 +29,7 @@ public static class ItemFactory
             }
 
             
-            return null;
         }
+        return null;
     }
 }

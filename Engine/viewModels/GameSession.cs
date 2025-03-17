@@ -52,7 +52,6 @@ public class GameSession : BaseNotification
             return currentWorld.LocationAt(currentLocation.xCoordinate, currentLocation.yCoordinate - 1) != null;
         }
     }
-
     public GameSession()
     {
         currentPlayer = new Player {name="Altria", characterClass = "Saber", hitPoints = 100, experiencePoints = 0, gold = 10};
@@ -60,6 +59,7 @@ public class GameSession : BaseNotification
         currentWorld = WorldFactory.CreateWorld();
         
         currentLocation = currentWorld.LocationAt(0, -1);
+        
     }
     public void MoveDirection(string direction)
     {
