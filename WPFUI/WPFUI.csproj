@@ -18,6 +18,8 @@
       <Resource Include="images\locations\Home.png" />
       <None Remove="images\locations\SpiderForest.png" />
       <None Remove="images\locations\csharptestgamespiderforest.png" />
+      <None Remove="images\monsters\pngtree-white-wolf-png-image_9006841.png" />
+      <Resource Include="images\monsters\wolf.png" />
     </ItemGroup>
 
 </Project>

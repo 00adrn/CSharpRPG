@@ -14,6 +14,7 @@ public static class ItemFactory
         _standardGameItems.Add(new GameItem(6001, "Wheat", 2));
         _standardGameItems.Add(new GameItem(6002, "Wood", 3));
         _standardGameItems.Add(new GameItem(6003, "Wolf Hide", 5));
+        _standardGameItems.Add(new GameItem(6004, "Spider Fang", 4));
     }
 
     public static GameItem CreateGameItem(int itemTypeID)
