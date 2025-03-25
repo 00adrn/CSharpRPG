@@ -7,16 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7b7ca90-1823-45c2-a340-1cc6b9ac8f20" name="Changes" comment="created map of the game and implemented it. still needs sprite for every location. got location sprites working too.">
-      <change afterPath="$PROJECT_DIR$/Engine/EventArgs/GameMessageEventArgs.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/models/MonsterEncounter.cs" afterDir="false" />
+    <list default="true" id="f7b7ca90-1823-45c2-a340-1cc6b9ac8f20" name="Changes" comment="created monsters at specific locations and made them visible. also made it so that text appears everytime you switch locations&#10;&#10;7.3">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SOSCSRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SOSCSRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/factories/WorldFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/factories/WorldFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/models/Location.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/models/Location.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/models/Monster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/models/Monster.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/viewModels/GameSession.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/viewModels/GameSession.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WPFUI/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/WPFUI/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WPFUI/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WPFUI/MainWindow.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740090603528</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="created monsters at specific locations and made them visible. also made it so that text appears everytime you switch locations&#10;&#10;7.3">
+      <option name="closed" value="true" />
+      <created>1742875412164</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742875412164</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +156,7 @@
     <MESSAGE value="added ability to traverse across diferent lcoations. currently only 2 locations exist because i am too fucking tired to create the other locations and their sprites." />
     <MESSAGE value="added ability to traverse across diferent lcoations. currently only 2 locations exist because i am too tired to create the other locations and their sprites." />
     <MESSAGE value="created map of the game and implemented it. still needs sprite for every location. got location sprites working too." />
-    <option name="LAST_COMMIT_MESSAGE" value="created map of the game and implemented it. still needs sprite for every location. got location sprites working too." />
+    <MESSAGE value="created monsters at specific locations and made them visible. also made it so that text appears everytime you switch locations&#10;&#10;7.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="created monsters at specific locations and made them visible. also made it so that text appears everytime you switch locations&#10;&#10;7.3" />
   </component>
 </project>
