@@ -14,10 +14,12 @@ internal static class WorldFactory
         newWorld.AddLocation(3, 1, "Town2", "Town2, home of more things!", "null");
         newWorld.AddLocation(3, 0, "Mountaintops of Something", "Watch your step!", "null");
         newWorld.AddLocation(3, -1, "Wolf's Forest", "Dominion of Wolf and wolves!", "null");
+        newWorld.LocationAt(3, -1).AddMonster(1, 100);
         newWorld.AddLocation(2, -1, "Fields", "Fertile lands with nightly disasters.", "null");
         newWorld.AddLocation(1, -1, "Farmer's Farm", "Home of the Farmer!", "null");
         newWorld.LocationAt(1, -1).QuestsAvailableHere.Add(QuestFactory.GetQuestByID(1));
         newWorld.AddLocation(0, 2, "Spider Forest", "Beware of the creepy crawlies.", "/WPFUI;component/images/locations/csharptestgamespiderforest.png");
+        newWorld.LocationAt(0, 2).AddMonster(2, 100);
         newWorld.AddLocation(-1, 0 , "City Gate", "Gate leading to the citadel!", "null");
         newWorld.AddLocation(-2, 0, "City", "Citadel of the things!", "null");
         return newWorld;

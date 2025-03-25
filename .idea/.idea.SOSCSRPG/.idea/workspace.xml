@@ -8,12 +8,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7b7ca90-1823-45c2-a340-1cc6b9ac8f20" name="Changes" comment="created map of the game and implemented it. still needs sprite for every location. got location sprites working too.">
-      <change afterPath="$PROJECT_DIR$/Engine/RandomNumberGenerator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/factories/MonsterFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/models/Monster.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WPFUI/images/monsters/wolf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/EventArgs/GameMessageEventArgs.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/models/MonsterEncounter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SOSCSRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SOSCSRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WPFUI/WPFUI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WPFUI/WPFUI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/factories/WorldFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/factories/WorldFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/models/Location.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/models/Location.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/models/Monster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/models/Monster.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/viewModels/GameSession.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/viewModels/GameSession.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WPFUI/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/WPFUI/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WPFUI/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WPFUI/MainWindow.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,14 +35,13 @@
     &quot;assignee&quot;: &quot;00adrn&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/00adrn/CSharpRpgTestGame.git",
-    "accountId": "15a47a49-eaf4-4640-aa74-a399407dbec9"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/00adrn/CSharpRpgTestGame.git&quot;,
+    &quot;accountId&quot;: &quot;15a47a49-eaf4-4640-aa74-a399407dbec9&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/ADRIAN/RiderProjects/SOSCSRPG/Engine/factories/WorldFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/ADRIAN/RiderProjects/SOSCSRPG/Engine/factories/WorldFactory.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />

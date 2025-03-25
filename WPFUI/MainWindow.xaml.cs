@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Engine.EventArgs;
 using Engine.viewModels;
 
 namespace WPFUI;
@@ -22,6 +23,7 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
         _gameSession = new GameSession();
+        _gameSession.OnMessageRaised += OnGameMessageRaised;
         DataContext = _gameSession;
     }
 
@@ -40,6 +42,12 @@ public partial class MainWindow : Window
     private void OnClick_MoveSouth(object sender, RoutedEventArgs e)
     {
         _gameSession.MoveDirection("south");
+    }
+
+    private void OnGameMessageRaised(object sender, GameMessageEventArgs e)
+    {
+        GameMessages.Document.Blocks.Add(new Paragraph(new Run(e.message)));
+        GameMessages.ScrollToEnd();
     }
     
 }

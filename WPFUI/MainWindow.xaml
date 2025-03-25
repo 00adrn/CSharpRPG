@@ -3,10 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:Engine.viewModels;assembly=Engine"
+        d:DataContext="{d:DesignInstance viewModels:GameSession}"
         xmlns:local="clr-namespace:WPFUI"
         mc:Ignorable="d"
         FontSize="12pt"
-        Title="Adrian's RPG" Height="768" Width="1024">
+        Title="Adrian's RPG" Height="720" Width="1280">
     
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
@@ -23,7 +25,8 @@
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
- 
+        
+        <!-- PLAYER STATUS/INFORMATION -->
         <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Menu" Background="AliceBlue"/>
         <Grid Grid.Row="1" Grid.Column="0" Background="#a16d3d" >
             <Grid.RowDefinitions>
@@ -31,7 +34,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/> 
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
@@ -46,7 +49,11 @@
             <Label Grid.Row ="4" Grid.Column="0" Content="Exp.:"/> <Label Grid.Row="4" Grid.Column="1" Content="{Binding currentPlayer.experiencePoints}"/>
             <Label Grid.Row="5" Grid.Column="0" Content="Level"/> <Label Grid.Row="5" Grid.Column="1" Content="{Binding currentPlayer.level}"/>
         </Grid>
-                
+        
+        
+        
+        
+        <!-- LOCATION INFORMATION -->
         <Grid Grid.Row="1" Grid.Column="1" Background="#ebe8e6">
             
             <Grid.RowDefinitions>
@@ -58,6 +65,24 @@
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
+            
+            <!-- GAMEPLAY -->
+            <Border Grid.Row="0" Grid.Column="0"
+                    Grid.RowSpan="2"
+                    BorderBrush="Black"
+                    BorderThickness="2">
+                
+                <RichTextBox x:Name="GameMessages"
+                             Background="Azure"
+                             VerticalScrollBarVisibility="Auto">
+                    <RichTextBox.Resources>
+                        <Style TargetType="{x:Type Paragraph}">
+                            <Setter Property="Margin" Value = "0"/>
+                        </Style>
+                    </RichTextBox.Resources>
+                </RichTextBox>
+            </Border>
+            
             
             <Border Grid.Row="0" Grid.Column="1" 
                     BorderBrush="Black"
@@ -84,8 +109,39 @@
                                Text="{Binding currentLocation.description}"/>
                 </Grid>
             </Border>
+            <Border Grid.Row="1" Grid.Column="1"
+                    BorderBrush="Gainsboro"
+                    BorderThickness="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0"
+                               HorizontalAlignment="Center"
+                               Height="Auto"
+                               Text="{Binding currentMonster.name}" />
+                    <Image Grid.Row="1"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Height="125"
+                           Width="125"
+                           Source="{Binding currentMonster.imageName}" />
+                    <StackPanel Grid.Row="2"
+                                Visibility="{Binding hasMonster, Converter={StaticResource BooleanToVisibility}}"
+                                HorizontalAlignment="Center"
+                                Orientation="Horizontal">
+                        <TextBlock>Current Hit Points:</TextBlock>
+                        <TextBlock Text="{Binding currentMonster.hitPoints}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
         </Grid>
         
+        
+        
+        <!-- INVENTORY AND QUESTS -->
         <Grid Grid.Row="2" Grid.Column="0" 
               Background="#5c4027">
             
@@ -123,6 +179,7 @@
         </Grid>
         
         
+        <!-- PLAYER CONTROL BUTTONS -->
             <Grid Grid.Row="2" Grid.Column="1" 
                   Background = "#a3a19e">
             

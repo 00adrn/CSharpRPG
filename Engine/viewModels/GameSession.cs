@@ -1,14 +1,36 @@
 ﻿using System.ComponentModel;
 using System.Linq;
+using Engine.EventArgs;
+
 namespace Engine.viewModels;
 using Engine.models;
 using Engine.factories;
 
 public class GameSession : BaseNotification
 {
+    public event EventHandler<GameMessageEventArgs> OnMessageRaised; 
     private Location _currentLocation;
     public Player currentPlayer { get; set; }
     public World currentWorld { get; set; }
+    private Monster _currentMonster;
+    public bool hasMonster => currentMonster != null;
+    public Monster currentMonster
+    {
+        get { return _currentMonster; }
+        set
+        {
+            _currentMonster = value;
+            
+            OnPropertyChanged(nameof(currentMonster));
+            OnPropertyChanged(nameof(hasMonster));
+
+            if (currentMonster != null)
+            {
+                RaiseMessage("");
+                RaiseMessage($"You see a {currentMonster.name} here!");
+            }
+        }
+    }
 
     public Location currentLocation
     {
@@ -23,6 +45,7 @@ public class GameSession : BaseNotification
             OnPropertyChanged(nameof(hasLocationSouth));
 
             GivePlayerQuestsAtLocation();
+            GetMonsterAtLocation();
         }
     }
 
@@ -98,7 +121,7 @@ public class GameSession : BaseNotification
                 break;
         }
     }
-
+    
     private void GivePlayerQuestsAtLocation()
     {
         foreach (Quest quest in currentLocation.QuestsAvailableHere)
@@ -108,5 +131,15 @@ public class GameSession : BaseNotification
                 currentPlayer.quests.Add(new QuestStatus(quest));
             }
         }
+    }
+    
+    private void GetMonsterAtLocation()
+    {
+        currentMonster = currentLocation.GetMonster();
+    }
+
+    private void RaiseMessage(string message)
+    {
+        OnMessageRaised?.Invoke(this, new GameMessageEventArgs(message));
     }
 }
