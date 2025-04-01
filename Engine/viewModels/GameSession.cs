@@ -14,6 +14,7 @@ public class GameSession : BaseNotification
     public World currentWorld { get; set; }
     private Monster _currentMonster;
     public bool hasMonster => currentMonster != null;
+    public Weapon currentWeapon { get; set; }
     public Monster currentMonster
     {
         get { return _currentMonster; }
@@ -80,6 +81,11 @@ public class GameSession : BaseNotification
     public GameSession()
     {
         currentPlayer = new Player {name="Altria", characterClass = "Saber", hitPoints = 100, experiencePoints = 0, gold = 10};
+
+        if (!currentPlayer.weapons.Any())
+        {
+            currentPlayer.AddItemToInventory(ItemFactory.CreateGameItem(1001));
+        }
         
         currentWorld = WorldFactory.CreateWorld();
         
@@ -136,6 +142,75 @@ public class GameSession : BaseNotification
     private void GetMonsterAtLocation()
     {
         currentMonster = currentLocation.GetMonster();
+    }
+
+    public void AttackCurrentMonster()
+    {
+        if (currentWeapon == null)
+        {
+            RaiseMessage($"");
+            RaiseMessage("Select a weapon before attacking!");
+            return;
+        }
+        int damageDealt = RandomNumberGenerator.NumberBetween(currentWeapon.minimumDamage, currentWeapon.maximumDamage);
+
+        if (damageDealt == 0)
+        {
+            RaiseMessage($"");
+            RaiseMessage($"The {currentMonster.name} dodged the attack!");
+        }
+        else
+        {
+            currentMonster.hitPoints -= damageDealt;
+            RaiseMessage($"");
+            RaiseMessage($"You hit the {currentMonster.name} for {damageDealt} damage!");
+        }
+
+        if (currentMonster.hitPoints <= 0)
+        {
+            RaiseMessage($"The {currentMonster.name} has been defeated!\n" +
+                         $"You earned {currentMonster.rewardExp} experience points!\n"
+                         + $"You also found {currentMonster.rewardGold} gold.");
+            currentPlayer.experiencePoints += currentMonster.rewardExp;
+            currentPlayer.gold += currentMonster.rewardGold;
+            
+            foreach (ItemQuantity loot in currentMonster.inventory)
+            {
+                GameItem item = ItemFactory.CreateGameItem(loot.itemID);
+                currentPlayer.AddItemToInventory(item);
+                RaiseMessage($"{loot.quantity} {item.itemName}(s) has been added to your inventory.");
+            }
+            
+            GetMonsterAtLocation();
+        }
+        else
+        {
+            int damageRecieved = RandomNumberGenerator.NumberBetween(currentMonster.minDamage, currentMonster.maxDamage);
+            if (damageRecieved == 0)
+            {
+                RaiseMessage($"");
+                RaiseMessage($"The {currentMonster.name}'s attack missed!");
+            }
+            else
+            {
+                currentPlayer.hitPoints -= damageRecieved;
+                RaiseMessage($"");
+                RaiseMessage($"The {currentMonster.name} hit you for {damageRecieved} damage!");
+            }
+
+            if (currentPlayer.hitPoints <= 0)
+            {
+                RaiseMessage($"");
+                RaiseMessage($"The {currentMonster.name} has defeated you!");
+
+                currentLocation = currentWorld.LocationAt(0, -1);
+                currentPlayer.hitPoints = 100;
+                RaiseMessage($"");
+                RaiseMessage($"");
+                RaiseMessage($"A magical force has brought you back home and has healed your wounds...");
+            }
+        }
+        
     }
 
     private void RaiseMessage(string message)

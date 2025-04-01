@@ -15,22 +15,27 @@ public class Monster : BaseNotification
     public int hitPoints
     {
         get { return _hitPoints; }
-        private set
+        set
         {
             _hitPoints = value;
             OnPropertyChanged(nameof(hitPoints));
         }
     }
-
+    
+    public int minDamage { get; set; }
+    public int maxDamage { get; set; }
+    
     public Monster(string _name, string _imageName, int _maxHitPoints,
-        int hp, int rewardExp, int rewardGold)
+        int hp, int _rewardExp, int _rewardGold, int _minDamage, int _maxDamage)
     {
         name = _name;
         imageName = _imageName;
         maxHitPoints = _maxHitPoints;
         hitPoints = hp;
-        rewardExp = rewardExp;
-        rewardGold = rewardGold;
+        rewardExp = _rewardExp;
+        rewardGold = _rewardGold;
+        minDamage = _minDamage;
+        maxDamage = _maxDamage;
         inventory = new ObservableCollection<ItemQuantity>();
     }
     

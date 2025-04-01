@@ -25,6 +25,10 @@ public static class ItemFactory
             {
                 if (gameItem != null)
                 {
+                    if (gameItem is Weapon)
+                    {
+                        return (gameItem as Weapon).Clone();
+                    }
                     return gameItem.Clone();
                 }
             }

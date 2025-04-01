@@ -50,8 +50,6 @@
         </Grid>
         
         
-        
-        
         <!-- RIGHT SECTION - LOCATION AND GAME MESSAGES -->
         <Grid Grid.Row="1" Grid.Column="1" Background="#ebe8e6">
             
@@ -223,53 +221,81 @@
         <!-- PLAYER CONTROL BUTTONS -->
             <Grid Grid.Row="2" Grid.Column="1" 
                   Background = "#a3a19e">
-            
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="255"/>
-            </Grid.ColumnDefinitions>
-            
-            <Grid Grid.Row="0" Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="255"/>
                 </Grid.ColumnDefinitions>
+                    
+                <!-- PLAYER ATTACK BUTTONS -->
+                <Grid Grid.Row="0" Grid.Column="0"
+                      Visibility="{Binding hasMonster, Converter={StaticResource BooleanToVisibility}}"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width ="150"/>
+                        <ColumnDefinition Width ="10"/>
+                        <ColumnDefinition Width ="50"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <ComboBox Grid.Row="0" Grid.Column="0"
+                              ItemsSource="{Binding currentPlayer.weapons}"
+                              SelectedItem="{Binding currentWeapon}"
+                              DisplayMemberPath="itemName"
+                              SelectedValuePath="itemTypeID"/>
+                    
+                    <Button Grid.Row="0" Grid.Column="2"
+                            Content="Use"
+                            Click="OnClick_AttackMonster"/>
+                    
+                </Grid>
                 
-                <Button Grid.Row="0" Grid.Column="1" 
-                        Height="25"
-                        Width="65"
-                        Margin="10"
-                        Click="OnClick_MoveNorth"
-                        Visibility="{Binding hasLocationNorth, Converter={StaticResource BooleanToVisibility}}"
-                        Content="North"/>
-                <Button Grid.Row="1" Grid.Column="0" 
-                        Height="25"
-                        Width="65"
-                        Margin="10"
-                        Click="OnClick_MoveWest"
-                        Visibility="{Binding hasLocationWest, Converter={StaticResource BooleanToVisibility}}"
-                        Content="West"/>
-                <Button Grid.Row="1" Grid.Column="2" 
-                        Height="25"
-                        Width="65"
-                        Margin="10"
-                        Click="OnClick_MoveEast"
-                        Visibility="{Binding hasLocationEast, Converter={StaticResource BooleanToVisibility}}"
-                        Content="East"/>
-                <Button Grid.Row="2" Grid.Column="1" 
-                        Height="25"
-                        Width="65"
-                        Margin="10"
-                        Click="OnClick_MoveSouth"
-                        Visibility="{Binding hasLocationSouth, Converter={StaticResource BooleanToVisibility}}"
-                        Content="South"/>
-            </Grid>
+                <!-- PLAYER MOVEMENT BUTTONS-->
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Button Grid.Row="0" Grid.Column="1" 
+                            Height="25"
+                            Width="65"
+                            Margin="10"
+                            Click="OnClick_MoveNorth"
+                            Visibility="{Binding hasLocationNorth, Converter={StaticResource BooleanToVisibility}}"
+                            Content="North"/>
+                    <Button Grid.Row="1" Grid.Column="0" 
+                            Height="25"
+                            Width="65"
+                            Margin="10"
+                            Click="OnClick_MoveWest"
+                            Visibility="{Binding hasLocationWest, Converter={StaticResource BooleanToVisibility}}"
+                            Content="West"/>
+                    <Button Grid.Row="1" Grid.Column="2" 
+                            Height="25"
+                            Width="65"
+                            Margin="10"
+                            Click="OnClick_MoveEast"
+                            Visibility="{Binding hasLocationEast, Converter={StaticResource BooleanToVisibility}}"
+                            Content="East"/>
+                    <Button Grid.Row="2" Grid.Column="1" 
+                            Height="25"
+                            Width="65"
+                            Margin="10"
+                            Click="OnClick_MoveSouth"
+                            Visibility="{Binding hasLocationSouth, Converter={StaticResource BooleanToVisibility}}"
+                            Content="South"/>
+                </Grid>
         </Grid>
     </Grid>
 </Window>
