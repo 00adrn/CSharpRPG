@@ -186,17 +186,44 @@
             
             <TabControl>
                 <TabItem Header="Inventory">
-                    <DataGrid ItemsSource="{Binding currentPlayer.inventory}"
+                    <DataGrid ItemsSource="{Binding currentPlayer.items}"
                               AutoGenerateColumns="False"
                               HeadersVisibility="Column">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Description"
                                                 Binding="{Binding itemName}"
-                                                Width="*"/>
+                                                Width="*"
+                                                IsReadOnly="True"/>
                             <DataGridTextColumn Header="Price"
-                                                Binding="{Binding itemPrice}"/>
+                                                Binding="{Binding itemPrice}"
+                                                IsReadOnly="True"/>
                         </DataGrid.Columns>
                         
+                    </DataGrid>
+                </TabItem>
+                <TabItem Header="Weapons">
+                    <DataGrid ItemsSource="{Binding currentPlayer.weapons}"
+                              AutoGenerateColumns="False"
+                              HeadersVisibility="Column">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name"
+                                                Binding="{Binding itemName}"
+                                                Width="*"
+                                                IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Damage"
+                                                Binding="{Binding maximumDamage}"
+                                                Width="Auto"
+                                                IsReadOnly="True"/>
+                            <!-- WORK IN PROGRESS
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding isEquipped}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            -->
+                        </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
                 <TabItem Header="Quests">
@@ -206,10 +233,12 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header = "Name"
                                                 Binding="{Binding playerQuest.questName}"
-                                                Width="*"/>
+                                                Width="*"
+                                                IsReadOnly="True"/>
                             <DataGridTextColumn Header="Status"
                                                 Binding="{Binding status}"
-                                                Width="Auto"/>
+                                                Width="Auto"
+                                                IsReadOnly="True"/>
                         </DataGrid.Columns>
                         
                     </DataGrid>

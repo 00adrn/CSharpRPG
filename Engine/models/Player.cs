@@ -72,6 +72,7 @@ public class Player: BaseNotification
     
     public ObservableCollection<GameItem> inventory { get; set; }
     public List<GameItem> weapons => inventory.Where(i => i is Weapon).ToList();
+    public List<GameItem> items => inventory.Where(i => i is not Weapon).ToList();
     public ObservableCollection<QuestStatus> quests { get; set; }
     
 
@@ -85,6 +86,8 @@ public class Player: BaseNotification
     {
         inventory.Add(item);
         
+        OnPropertyChanged(nameof(inventory));
+        OnPropertyChanged(nameof(items));
         OnPropertyChanged(nameof(weapons));
     }
     

@@ -3,8 +3,8 @@
 public class GameItem
 {
     public int itemTypeID { get; set; }
-    public string itemName { get; set; }
-    public int itemPrice { get; set; }
+    public string itemName { get; private set; }
+    public int itemPrice { get; private set; }
 
     public GameItem(int _itemTypeID, string _itemName, int _itemPrice)
     {

@@ -28,12 +28,12 @@
     &quot;assignee&quot;: &quot;00adrn&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/00adrn/CSharpRpgTestGame.git",
-    "accountId": "f1c05dd2-a251-4053-943c-fa6ea2a164c9"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/00adrn/CSharpRpgTestGame.git&quot;,
+    &quot;accountId&quot;: &quot;f1c05dd2-a251-4053-943c-fa6ea2a164c9&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/Users/ADRIAN/RiderProjects/SOSCSRPG/Engine/factories/WorldFactory.cs" root0="SKIP_HIGHLIGHTING" />
   </component>

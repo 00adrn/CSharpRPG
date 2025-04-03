@@ -32,7 +32,6 @@ public class GameSession : BaseNotification
             }
         }
     }
-
     public Location currentLocation
     {
         get { return _currentLocation; }
@@ -211,6 +210,11 @@ public class GameSession : BaseNotification
             }
         }
         
+    }
+
+    public void EquipWeapon(int itemID)
+    {
+
     }
 
     private void RaiseMessage(string message)

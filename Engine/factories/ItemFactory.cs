@@ -32,8 +32,20 @@ public static class ItemFactory
                     return gameItem.Clone();
                 }
             }
-
-            
+        }
+        return null;
+    }
+    public static Weapon CreateWeapon(int itemTypeID)
+    {
+        foreach (GameItem gameItem in _standardGameItems)
+        {
+            if (gameItem is Weapon)
+            {
+                if (gameItem.itemTypeID == itemTypeID)
+                {
+                    return (gameItem as Weapon).Clone();
+                }
+            }
         }
         return null;
     }
