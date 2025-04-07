@@ -49,34 +49,11 @@ public class GameSession : BaseNotification
         }
     }
 
-    public bool hasLocationNorth
-    {
-        get
-        {
-            return currentWorld.LocationAt(currentLocation.xCoordinate, currentLocation.yCoordinate + 1) != null;
-        }
-    }
-    public bool hasLocationWest
-    {
-        get
-        {
-            return currentWorld.LocationAt(currentLocation.xCoordinate - 1, currentLocation.yCoordinate) != null;
-        }
-    }
-    public bool hasLocationEast
-    {
-        get
-        {
-            return currentWorld.LocationAt(currentLocation.xCoordinate + 1, currentLocation.yCoordinate) != null;
-        }
-    }
-    public bool hasLocationSouth
-    {
-        get
-        {
-            return currentWorld.LocationAt(currentLocation.xCoordinate, currentLocation.yCoordinate - 1) != null;
-        }
-    }
+    public bool hasLocationNorth => currentWorld.LocationAt(currentLocation.xCoordinate, currentLocation.yCoordinate + 1) != null;
+    public bool hasLocationWest => currentWorld.LocationAt(currentLocation.xCoordinate - 1, currentLocation.yCoordinate) != null;
+    public bool hasLocationEast => currentWorld.LocationAt(currentLocation.xCoordinate + 1, currentLocation.yCoordinate) != null;
+    public bool hasLocationSouth => currentWorld.LocationAt(currentLocation.xCoordinate, currentLocation.yCoordinate - 1) != null;
+
     public GameSession()
     {
         currentPlayer = new Player {name="Altria", characterClass = "Saber", hitPoints = 100, experiencePoints = 0, gold = 10};
@@ -211,11 +188,7 @@ public class GameSession : BaseNotification
         }
         
     }
-
-    public void EquipWeapon(int itemID)
-    {
-
-    }
+    
 
     private void RaiseMessage(string message)
     {

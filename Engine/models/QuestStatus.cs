@@ -14,7 +14,7 @@ public class QuestStatus
                 return "Completed";
             }
 
-            return "In Progress";
+            return "IP";
         }
         set
         {

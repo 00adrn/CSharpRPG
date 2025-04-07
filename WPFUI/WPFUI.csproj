@@ -20,6 +20,10 @@
       <None Remove="images\locations\csharptestgamespiderforest.png" />
       <None Remove="images\monsters\pngtree-white-wolf-png-image_9006841.png" />
       <Resource Include="images\monsters\wolf.png" />
+      <None Remove="images\monsters\csharptestgamespider.png" />
+      <Resource Include="images\monsters\csharptestgamespider.png" />
+      <None Remove="images\monsters\csharptestgamewolf.png" />
+      <Resource Include="images\monsters\csharptestgamewolf.png" />
     </ItemGroup>
 
 </Project>

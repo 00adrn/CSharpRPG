@@ -13,7 +13,7 @@ public class World
         loc.yCoordinate = yCoord;
         loc.name = name;
         loc.description = description;
-        loc.imageName = imageName;
+        loc.imageName = $"/WPFUI;component/images/locations/{imageName}";
         
         _locations.Add(loc);
     }

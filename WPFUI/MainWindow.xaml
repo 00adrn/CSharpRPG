@@ -22,7 +22,7 @@
         </Grid.RowDefinitions>
  
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="300"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
@@ -113,7 +113,7 @@
                     BorderThickness="2">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="*" />
                         <RowDefinition Height="7*" />
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" 
@@ -184,8 +184,9 @@
         <Grid Grid.Row="2" Grid.Column="0" 
               Background="#5c4027">
             
-            <TabControl>
-                <TabItem Header="Inventory">
+            <TabControl Background="#5c4027">
+                <TabItem Header="Inventory"
+                         Background="#5c4027">
                     <DataGrid ItemsSource="{Binding currentPlayer.items}"
                               AutoGenerateColumns="False"
                               HeadersVisibility="Column">
@@ -202,6 +203,7 @@
                     </DataGrid>
                 </TabItem>
                 <TabItem Header="Weapons">
+                    
                     <DataGrid ItemsSource="{Binding currentPlayer.weapons}"
                               AutoGenerateColumns="False"
                               HeadersVisibility="Column">
@@ -214,17 +216,10 @@
                                                 Binding="{Binding maximumDamage}"
                                                 Width="Auto"
                                                 IsReadOnly="True"/>
-                            <!-- WORK IN PROGRESS
-                            <DataGridTemplateColumn>
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <CheckBox IsChecked="{Binding isEquipped}"/>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            -->
                         </DataGrid.Columns>
+                        
                     </DataGrid>
+                    
                 </TabItem>
                 <TabItem Header="Quests">
                     <DataGrid ItemsSource="{Binding currentPlayer.quests}"

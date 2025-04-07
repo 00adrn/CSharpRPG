@@ -9,11 +9,11 @@ public static class MonsterFactory
         switch (monsterID)
         {
             case 1:
-                Monster wolf = new Monster("Wolf", "/WPFUI;component/images/monsters/wolf.png", 10, 10, 5, 3, 6, 8);
+                Monster wolf = new Monster("Wolf", "csharptestgamewolf.png", 10, 10, 5, 3, 6, 8);
                 AddLootItem(wolf, 6003, 30);
                 return wolf;
             case 2:
-                Monster spider = new Monster("Spider", "null", 8, 8, 3, 2, 5, 6);
+                Monster spider = new Monster("Spider", "csharptestgamespider.png", 8, 8, 3, 2, 5, 6);
                 AddLootItem(spider, 6004, 30);
                 return spider;
             default:

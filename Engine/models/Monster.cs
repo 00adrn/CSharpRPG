@@ -29,7 +29,7 @@ public class Monster : BaseNotification
         int hp, int _rewardExp, int _rewardGold, int _minDamage, int _maxDamage)
     {
         name = _name;
-        imageName = _imageName;
+        imageName = $"/WPFUI;component/images/monsters/{_imageName}";
         maxHitPoints = _maxHitPoints;
         hitPoints = hp;
         rewardExp = _rewardExp;
